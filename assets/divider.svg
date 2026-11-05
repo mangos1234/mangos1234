@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 48" width="900" height="48">
+  <!-- Decorative only: a little sprite hops along a pixel path, then stops at the end. -->
+  <style>
+    .walk { animation: walk 3.6s linear .2s backwards; }
+    .hop  { animation: hop .45s ease-in-out .2s 8; }
+    @keyframes walk { from { transform: translateX(-840px); } to { transform: none; } }
+    @keyframes hop  { 0%, 100% { transform: none; } 50% { transform: translateY(-10px); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <defs>
+    <pattern id="dots" width="24" height="6" patternUnits="userSpaceOnUse">
+      <rect width="12" height="6" fill="#7ddbc8" opacity=".45"/>
+    </pattern>
+  </defs>
+  <rect x="0" y="38" width="900" height="6" fill="url(#dots)"/>
+  <g class="walk">
+    <g class="hop" fill="#7ddbc8">
+      <rect x="858" y="12" width="5" height="9"/><rect x="871" y="12" width="5" height="9"/>
+      <rect x="863" y="16" width="8" height="5"/><rect x="864" y="21" width="6" height="5"/>
+      <rect x="856" y="26" width="5" height="5"/><rect x="873" y="26" width="5" height="5"/>
+      <rect x="864" y="31" width="6" height="5"/>
+    </g>
+  </g>
+</svg>

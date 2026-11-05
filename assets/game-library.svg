@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180" width="300" height="180">
+  <style>
+    .book  { animation: float-in .8s ease-out .3s backwards, bob .8s ease-in-out 1.1s 3; }
+    .page  { transform-box: fill-box; transform-origin: 0% 50%; animation: flip .8s ease-in-out 1.1s 3; }
+    .spark { opacity: .8; animation: twinkle 1.2s ease-in-out 3 backwards; }
+    .d1 { animation-delay: .2s } .d2 { animation-delay: .6s } .d3 { animation-delay: 1s }
+    @keyframes float-in { from { transform: translate(-70px, 40px); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes bob      { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes flip     { 0% { transform: scaleX(1); } 50%, 100% { transform: scaleX(-1); } }
+    @keyframes twinkle  { 0%, 100% { opacity: .8; } 50% { opacity: .1; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f1a2e"/><stop offset="1" stop-color="#1b1640"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="180" rx="14" fill="url(#bg)"/>
+
+  <!-- shelves -->
+  <rect x="20" y="78"  width="150" height="6" fill="#4a3b78"/>
+  <rect x="20" y="140" width="150" height="6" fill="#4a3b78"/>
+  <g>
+    <rect x="28"  y="40"  width="14" height="38" fill="#e86f8a"/>
+    <rect x="44"  y="46"  width="12" height="32" fill="#f2c14e"/>
+    <rect x="58"  y="36"  width="16" height="42" fill="#7ddbc8"/>
+    <rect x="76"  y="44"  width="12" height="34" fill="#8f7cf0"/>
+    <!-- gap where the magic book came from -->
+    <rect x="114" y="42"  width="14" height="36" fill="#f2c14e"/>
+    <rect x="130" y="38"  width="12" height="40" fill="#e86f8a"/>
+    <rect x="144" y="48"  width="16" height="30" fill="#7ddbc8"/>
+    <rect x="28"  y="104" width="16" height="36" fill="#8f7cf0"/>
+    <rect x="46"  y="98"  width="12" height="42" fill="#7ddbc8"/>
+    <rect x="60"  y="108" width="14" height="32" fill="#e86f8a"/>
+    <rect x="76"  y="100" width="12" height="40" fill="#f2c14e"/>
+    <rect x="90"  y="106" width="16" height="34" fill="#8f7cf0"/>
+    <rect x="108" y="96"  width="12" height="44" fill="#e86f8a"/>
+    <rect x="122" y="104" width="14" height="36" fill="#7ddbc8"/>
+    <rect x="138" y="100" width="12" height="40" fill="#f2c14e"/>
+  </g>
+
+  <!-- floating open spellbook -->
+  <g class="book">
+    <rect x="200" y="78" width="72" height="8" fill="#8f7cf0"/>
+    <rect x="204" y="56" width="32" height="24" fill="#e6fffa"/>
+    <rect x="236" y="56" width="32" height="24" fill="#e6fffa"/>
+    <rect class="page" x="236" y="56" width="32" height="24" fill="#c9f1e8"/>
+    <rect x="210" y="62" width="18" height="2" fill="#8b9bb4"/>
+    <rect x="210" y="68" width="14" height="2" fill="#8b9bb4"/>
+    <rect x="235" y="54" width="2"  height="28" fill="#4a3b78"/>
+  </g>
+
+  <!-- sparkles -->
+  <g fill="#f2c14e">
+    <path class="spark d1" d="M214 30h4v4h4v4h-4v4h-4v-4h-4v-4h4z"/>
+    <path class="spark d2" d="M262 22h4v4h4v4h-4v4h-4v-4h-4v-4h4z"/>
+    <path class="spark d3" d="M276 112h4v4h4v4h-4v4h-4v-4h-4v-4h4z"/>
+    <path class="spark d2" d="M194 118h4v4h4v4h-4v4h-4v-4h-4v-4h4z"/>
+  </g>
+</svg>
